@@ -1,0 +1,25 @@
+body {
+  background-color: greenyellow;
+}
+
+body #kutu {
+  background-color: #f18585;
+  width: 100px;
+  height: 100px;
+  margin: 15px;
+}
+
+body li {
+  background-color: #f18585;
+  display: inline-block;
+}
+
+body li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: justify;
+  margin: 30px;
+  border-radius: 5px;
+}
+/*# sourceMappingURL=Sass-Exercise.css.map */

@@ -1,0 +1,22 @@
+$mainColor:rgb(241, 133, 133);
+body {
+    background-color: greenyellow;
+    #kutu {
+        background-color: $mainColor;
+        width: 100px;
+        height: 100px;
+        margin: 15px;
+    }
+    li {
+        background-color: $mainColor;
+        display: inline-block;
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #fff;
+            text-align: justify;
+            margin: 30px;
+            border-radius: 5px;
+        }
+    }
+}
