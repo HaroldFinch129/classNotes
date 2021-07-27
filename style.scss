@@ -1,49 +1,66 @@
-@mixin stil($takim) {
-    @if ($takim=="fb") {
-        background-color: blue;
-    }
-    @else if ($takim=="gs") {
-        background-color: red;
-        color: white;
-    }
-    @else if ($takim=="bjk") {
-        background-color: black;
-    }
-    @else {
-        background-color: purple;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+$primaryColor: #44FFD7;
+$textColor: red;
+$widthButton: 100px;
+nav {
+    background-color: gray;
+    &::after {
+        display: block;
+        content: "";
+        clear: both;
     }
 }
 
-;
-.kutu {
+.left {
+    list-style: none;
     float: left;
-    padding: 10px 15px;
-    @include stil("gs")
-}
-
-// each döngüleri
-$boyutlar: ( 1:100, 2:200, 3:300, 4:400, 5:500, );
-@each $isim,
-$boyut in $boyutlar {
-    .b-#{$isim} {
-        float: left;
-        width: $boyut +px;
+    li {
+        $secondaryColor: darkgreen !global;
+        display: inline-block;
+        margin: 25px;
+        background-color: $secondaryColor;
+        &:first-child {
+            margin: 0;
+        }
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $textColor;
+            display: inline-block;
+            padding: 10px;
+        }
     }
 }
 
-// for döngüsü 
-@for $i from 1 through 5 {
-    .ahmet#{$i} {
-        float: left;
-        width: $i * 100 +px;
+.right {
+    float: right;
+    .cw,
+    .linkedin {
+        padding: 10px;
+        display: inline-block;
+        width: $widthButton;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $textColor;
     }
-}
-
-$sayi: 1;
-@while ($sayi <=5) {
-    .k_#{$sayi} {
-        float: left;
-        width: $sayi *100 + px;
+    .cw {
+        &:link {
+            background-color: $primaryColor;
+        }
+        &:hover {
+            background-color: lighten($primaryColor, 20%);
+        }
     }
-    $sayi: $sayi+1;
+    .linkedin {
+        &:link {
+            background-color: $primaryColor;
+        }
+        &:hover {
+            background-color: lighten($primaryColor, 20%);
+        }
+    }
 }
