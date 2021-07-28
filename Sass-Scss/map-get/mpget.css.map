@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,IAAI,CAAC;EACD,gBAAgB,EAHwB,IAAI;CAI/C;;AAGD,AAAA,EAAE,CAAC;EACC,KAAK,EARsB,IAAI;EAS/B,WAAW,EARuB,GAAG;CASxC",
+    "sources": [
+        "mpget.scss"
+    ],
+    "names": [],
+    "file": "mpget.css"
+}

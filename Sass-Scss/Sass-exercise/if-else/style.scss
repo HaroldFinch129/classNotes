@@ -1,0 +1,68 @@
+@mixin stil($takim) {
+    
+    @if ($takim == "fb") {
+        background-color: blue;
+    }
+    @else if ($takim == "gs") {
+        background-color: red;
+        color: white;
+    }
+    @else if ($takim == "bjk") {
+        background-color: black;
+    }
+    @else {
+        background-color: purple;
+    }
+
+};
+
+
+
+
+.kutu{
+    float: left;
+    padding: 10px 15px;
+    @include stil("gs")
+}
+
+
+// each döngüleri
+
+$boyutlar: (
+    1:100,
+    2:200,
+    3:300,
+    4:400,
+    5:500,
+);
+
+@each $isim, $boyut in $boyutlar {
+
+    .b-#{$isim}{
+        float: left;
+        width: $boyut +px;
+    }
+    
+}
+
+
+// for döngüsü 
+
+@for $i from 1 through 5 {
+    .ahmet#{$i}{
+        float: left;
+        width: $i * 100 +px;
+    }
+}
+
+$sayi : 1;
+
+@while ($sayi <= 5) {
+
+    .k_#{$sayi} {
+        float: left;
+        width: $sayi *100 + px;
+    } 
+    $sayi: $sayi + 1;
+    
+}
