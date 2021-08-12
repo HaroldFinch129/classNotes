@@ -26,13 +26,21 @@ document.getElementById("customer-form").addEventListener("submit",
         console.log("...form's this...");
         console.log(this);
         e.preventDefault();
-        const name = this.getElementById("name");
-        const price = this.getElementById("price");
-        const quantity = this.getElementById("quantity");
+        const name = this.querySelector("#name");
+        const price = this.querySelector("#price");
+        const quantity = this.querySelector("#quantity");
         const product = new Product(name.value, price.value, quantity.value);
         const display = new Display();
 
+        // display.clearFields();
+        display.showLoading();
+
     });
+
+Display.prototype.showLoading = function() {
+    const loading = document.querySelector(".loading");
+    loading.style.display = "block";
+}
 
 
 
