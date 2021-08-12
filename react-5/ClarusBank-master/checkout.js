@@ -40,6 +40,14 @@ document.getElementById("customer-form").addEventListener("submit",
 Display.prototype.showLoading = function() {
     const loading = document.querySelector(".loading");
     loading.style.display = "block";
+    console.log("showloading's this");
+    console.log(this);
+
+    const displayObj = this;
+    setTimeout(function() {
+        loading.style.display = "none";
+
+    }, 3000);
 }
 
 
