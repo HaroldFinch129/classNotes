@@ -19,6 +19,15 @@ function Display() {
 }
 
 
+document.getElementById("customer-form").addEventListener("submit",
+    function(e) {
+        console.log("...event...");
+        console.log(e);
+        console.log("...form's this...");
+        console.log(this);
+        e.preventDefault();
+
+    });
 
 
 
