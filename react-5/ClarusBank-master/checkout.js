@@ -31,13 +31,14 @@ document.getElementById("customer-form").addEventListener("submit",
         const quantity = this.querySelector("#quantity");
         const product = new Product(name.value, price.value, quantity.value);
         const display = new Display();
+        console.log(product);
 
         // display.clearFields();
-        display.showLoading();
+        display.showLoading(product);
 
     });
 
-Display.prototype.showLoading = function() {
+Display.prototype.showLoading = function(product) {
     const loading = document.querySelector(".loading");
     loading.style.display = "block";
     console.log("showloading's this");
@@ -46,9 +47,41 @@ Display.prototype.showLoading = function() {
     const displayObj = this;
     setTimeout(function() {
         loading.style.display = "none";
-
+        displayObj.addProduct(product);
     }, 3000);
 }
+
+Display.prototype.addProduct = function() {
+    //  to do
+}
+
+
+
+Display.prototype.addProduct = function(product) {
+    //random image to do
+    const productsDiv = document.getElementsByClassName("products")[0];
+    productsDiv.innerHTML += `<div class="product">
+    <div class="product-image">
+      <img src="img/product-1.jpg">
+    </div>
+    <div class="product-details">
+      <div class="product-title">${product.name}</div>
+    </div>
+    <div class="product-price">${product.price}</div>
+    <div class="product-quantity">
+      <input type="number" value="${product.quantity}" min="1">
+    </div>
+    <div class="product-removal">
+      <button class="remove-product">
+        Remove
+      </button>
+    </div>
+    <div class="product-line-price">${parseFloat(product.price) * parseFloat(product.quantity)}</div>
+      </div>`;
+}
+
+
+
 
 
 
