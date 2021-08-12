@@ -26,6 +26,11 @@ document.getElementById("customer-form").addEventListener("submit",
         console.log("...form's this...");
         console.log(this);
         e.preventDefault();
+        const name = this.getElementById("name");
+        const price = this.getElementById("price");
+        const quantity = this.getElementById("quantity");
+        const product = new Product(name.value, price.value, quantity.value);
+        const display = new Display();
 
     });
 
