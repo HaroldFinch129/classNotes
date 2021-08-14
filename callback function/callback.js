@@ -122,3 +122,30 @@ const vat = cart.reduce((sum, curItem) => {
     return sum + (curItem.price * curItem.vat) / 100;
 }, {});
 console.log("vat :>> ", vat);
+
+/*
+--------------
+for in example
+--------------
+*/
+const parent = {
+    firstName: "Mike",
+    lastName: "Doe",
+    profession: "Barber",
+};
+
+function Baby() {
+    this.firstName = "unnamed";
+    this.weight = 3.4;
+}
+
+Baby.prototype = parent;
+
+var sally = new Baby();
+sally.firstName = "Sally";
+
+for (const prop in sally) {
+    const element = sally[prop];
+    console.log(prop, ":>>", element);
+    if (Object.hasOwnProperty.call(sally, prop)) {}
+}
