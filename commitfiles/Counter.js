@@ -20,12 +20,27 @@ export default class Counter extends Component {
         return null
     }
 
+    shouldComponentUpdate() {
+        console.log("Should Update???");
+        return true
+    }
+
     componentDidMount = () => {
         console.log("Component mounted!");
         console.log("-----------------")
     }
     componentDidUpdate = () => {
         console.log("Updated");
+        console.log("------------------")
+    }
+
+    getSnapshotBeforeUpdate(prevprops, prevstate) {
+        console.log("snapshor", prevstate)
+        return null
+    }
+
+    componentWillUnmount() {
+        console.log("will unmount bye!");
     }
     render() {
         console.log("render")
@@ -35,7 +50,8 @@ export default class Counter extends Component {
             p > counter: { this.state.count } < /p>  <
             button onClick = {
                 () => this.increase() } > ARTTIR < /button>  <
-            button > AZALT < /button>
+            button onClick = {
+                () => this.componentWillUnmount() } > Azalt < /button>
 
             <
             /div>
