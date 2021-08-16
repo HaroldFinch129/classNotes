@@ -1,1 +1,9 @@
-.container {}
+.container {
+    background-color: #7BFF00;
+    color: blue;
+    font-size: 20px;
+    width: 300px;
+    height: 100px;
+}
+
+;
