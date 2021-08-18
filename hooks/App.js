@@ -15,18 +15,19 @@
 
 // export default App;
 
-
+import { useState } from 'react';
 import FunctionalComponent from './hooks/FunctionalComponent';
 import ClassComponent from './hooks/ClassComponent';
 
 function App() {
+    const [isVisible, setVisibile] = useState(true);
     return ( <
         div className = "App" >
         <
-        ClassComponent / >
-        <
-        FunctionalComponent / >
-        <
+        button onClick = {
+            () => setVisibile(!isVisible) } > Toggle < /button> { true && < ClassComponent / > } { isVisible ? < FunctionalComponent / > : null }
+
+        { /* <ClassComponent/> */ } { /* <FunctionalComponent/> */ } <
         /div>
     );
 }
