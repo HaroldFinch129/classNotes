@@ -1,6 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 const FunctionalComponent = () => {
     const [counter, setCounter] = useState(0);
+
+    useEffect(() => {
+        console.log("useEffect");
+        return () => { console.log("func. comp. willunmount"); }
+    }, [counter]);
     const increase = () => {
         setCounter(counter + 1);
     }
@@ -9,9 +14,7 @@ const FunctionalComponent = () => {
         <
         h2 > Functional Component < /h2> <
         p > Counter: { counter } < /p> <
-        button onClick = {
-            () => increase() }
-        Increse > Increase < /button> <
+        button onClick = { increase } > Increase < /button> <
         /div>
     )
 };
