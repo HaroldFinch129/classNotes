@@ -4,7 +4,7 @@
 // import Counter from './commitfiles/Counter';
 
 // function App() {
-
+  
 //   return (
 //     <div className="App">
 //      <h2>My Counter</h2>
@@ -20,16 +20,17 @@ import FunctionalComponent from './hooks/FunctionalComponent';
 import ClassComponent from './hooks/ClassComponent';
 
 function App() {
-    const [isVisible, setVisibile] = useState(true);
-    return ( <
-        div className = "App" >
-        <
-        button onClick = {
-            () => setVisibile(!isVisible) } > Toggle < /button> { true && < ClassComponent / > } { isVisible ? < FunctionalComponent / > : null }
-
-        { /* <ClassComponent/> */ } { /* <FunctionalComponent/> */ } <
-        /div>
-    );
+  const [isVisible, setVisibile] = useState(true);
+  return (
+    <div className="App">
+      <button onClick= {()=> setVisibile(!isVisible)}>Toggle</button>
+      {true && <ClassComponent/>}
+      {isVisible ? <FunctionalComponent/> : null}
+      
+      {/* <ClassComponent/> */}
+      {/* <FunctionalComponent/> */}
+    </div>
+  );
 }
 
 export default App;
