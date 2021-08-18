@@ -3,6 +3,18 @@ class ClassComponent extends React.Component {
     state = {
         counter: 0,
     };
+
+    componentDidMount() {
+        console.log("ComponentdidMount");
+    }
+
+    componentDidUpdate() {
+        console.log("componentDidUpdate");
+    }
+
+    componentWillUnmount() {
+        console.log("componentWillUnmount");
+    }
     increase = () => {
         this.setState({ counter: this.state.counter + 1 })
     }
@@ -14,7 +26,7 @@ class ClassComponent extends React.Component {
             h2 > Class Component < /h2> <
             p > Counter: { this.state.counter } < /p> <
             button onClick = {
-                () => this.increase() } > Increse < /button> <
+                () => this.increase() } > Increase < /button> <
             /div>
         );
     }
