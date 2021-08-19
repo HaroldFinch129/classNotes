@@ -22,17 +22,37 @@
 // console.log("hello3");
 // console.timeLog("bir");
 
-let counter = 0;
-const id = setInterval(function() {
-    const timeLabel = document.querySelector("p");
-    // console.log(timeLabel);
-    const time = new Date();
-    timeLabel.innerHTML = time.toLocaleTimeString();
-    counter++;
-    if (counter == 5) {
-        timeLabel.innerHTML = "Merhaba";
-        clearInterval(id);
-        // console.log("timeLabel :>> ", timeLabel);
+// let counter = 0;
+// const id = setInterval(function () {
+//   const timeLabel = document.querySelector("p");
+//   // console.log(timeLabel);
+//   const time = new Date();
+//   timeLabel.innerHTML = time.toLocaleTimeString();
+//   counter++;
+//   if (counter == 5) {
+//     timeLabel.innerHTML = "Merhaba";
+//     clearInterval(id);
+//     // console.log("timeLabel :>> ", timeLabel);
+//   }
+// }, 1000);
+// console.log("id :>> ", id);
+
+/** promise */
+
+const myPromise = new Promise((resolve, reject) => {
+    console.log("myPromise started");
+    let condition = false;
+    if (condition) {
+        resolve("işlem tamam");
     }
-}, 1000);
-console.log("id :>> ", id);
+    reject(Error("gerçekleşmedi"));
+});
+console.log("merhaba");
+myPromise
+    .then((msg) => {
+        console.log(msg);
+    })
+    .catch((msg) => {
+        console.log(msg);
+    });
+console.log("gule gule");
