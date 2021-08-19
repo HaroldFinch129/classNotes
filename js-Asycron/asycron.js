@@ -23,16 +23,16 @@
 // console.timeLog("bir");
 
 let counter = 0;
-
-function showTime() {
-    if (counter == 20) {
-        clearInterval(id);
-    }
-
+const id = setInterval(function() {
     const timeLabel = document.querySelector("p");
     // console.log(timeLabel);
     const time = new Date();
     timeLabel.innerHTML = time.toLocaleTimeString();
     counter++;
-}
-setInterval(showTime, 1000);
+    if (counter == 5) {
+        timeLabel.innerHTML = "Merhaba";
+        clearInterval(id);
+        // console.log("timeLabel :>> ", timeLabel);
+    }
+}, 1000);
+console.log("id :>> ", id);
