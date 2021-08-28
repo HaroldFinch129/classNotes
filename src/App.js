@@ -1,18 +1,42 @@
-// import EventBind from './components/eventBinding/EventBind'
-// import MouseEvents from './components/mouseEvents/MouseEvents'
-// import KeyboardEvents from './components/keyboardEvents/KeyboardEvents'
-import Form from './components/form/Form'
-import './App.css'
+import React from 'react'
+import "./App.css"
+import Header from './components/Header'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import Home from './pages/Home'
+import About from './pages/About'
+import Profile from './pages/Profile'
+import NotFound from './pages/NotFound'
+import Post from './pages/Post'
 
 const App = () => {
-    return (
-        <div className="App">
-            {/* <h1>Events in React</h1> */}
-            {/* <EventBind /> */}
-            {/* <MouseEvents /> */}
-            {/* <KeyboardEvents /> */}
-            <Form />
-        </div>
+    return ( <
+        Router forceRefresh >
+        <
+        div className = "App" >
+        <
+        Header / >
+        <
+        /div> <
+        Switch >
+        <
+        Route path = "/about"
+        component = { About }
+        /> <
+        Route path = "/profile"
+        component = { Profile }
+        /> <
+        Route path = "/"
+        component = { Home }
+        /> <
+        Route path = "/post"
+        component = { Post }
+        /> <
+        Route component = { NotFound }
+        />
+
+        <
+        /Switch> <
+        /Router>
     )
 }
 
