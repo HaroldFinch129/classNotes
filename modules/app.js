@@ -1,17 +1,24 @@
-var cakeRecipe;
-const eggCount = 4;
-let sugarAmount = 1.5;
-const timeToMix = 10;
+const message = 'Good Evening!';
+console.log(message);
 
-const ingredients = [];
-ingredients.push(`${eggCount} eggs`);
-ingredients.push(`${sugarAmount} glass of sugar`);
-console.log(...ingredients);
-cakeRecipe = `add ${eggCount} eggs and ${sugarAmount} glass of sugar into the mixer bowl, and mix for 
-${timeToMix} minutes`;
+/*** */
+import {
+    WHW,
+    WORKING_HOURS_WEEK as hrs,
+    counter,
+    inc,
+    sum,
+    /*  default as mmm, */
+} from './module1.js';
+var a = 5;
+// console.log('mmm :>> ', mmm);
+console.log('WHW :>> ', WHW);
+console.log('hrs :>> ', hrs);
+inc(55);
+inc();
+console.log('counter:>> ', counter);
+console.log('sum:>> ', sum(5, 3));
 
-const cook = () => {
-    console.log(cakeRecipe);
-    console.log('cake is cooking for 40mins');
-};
-cook();
+// default import
+import mn from './module1.js';
+console.log('mn :>> ', mn);
