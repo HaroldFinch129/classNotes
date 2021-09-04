@@ -1,6 +1,12 @@
 import React from 'react'
+import { useContext } from 'react';
+import { StudentContext } from '../context/StudentContext';
 
 const StudentItem = ({ student, changeColor }) => {
+    const deger = useContext(StudentContext)
+
+    console.log(`deger`, deger)
+
     return ( <
         div style = {
             { background: student.color, paddingBottom: "2rem", paddingTop: "1rem", marginBottom: "1rem" } } >
